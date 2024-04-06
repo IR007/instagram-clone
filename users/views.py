@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from datetime import datetime
 
 from django.shortcuts import render
@@ -7,6 +8,12 @@ from rest_framework.views import APIView
 from rest_framework.exceptions import ValidationError
 
 from .models import User, NEW, CODE_VERIFIED
+=======
+from django.shortcuts import render
+from rest_framework import generics, permissions
+
+from .models import User
+>>>>>>> origin/master
 from .serializers import SignUpSerializer
 
 
@@ -14,6 +21,7 @@ class SignUpAPIView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = SignUpSerializer
     permission_classes = [permissions.AllowAny]
+<<<<<<< HEAD
 
 
 class VerifyAPIView(APIView):
@@ -44,3 +52,5 @@ class VerifyAPIView(APIView):
             user.auth_status = CODE_VERIFIED
             user.save()
         return True
+=======
+>>>>>>> origin/master

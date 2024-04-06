@@ -1,10 +1,13 @@
 from pathlib import Path
 
+<<<<<<< HEAD
 from environs import Env
 
 env = Env()
 env.read_env()
 
+=======
+>>>>>>> origin/master
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,7 +38,10 @@ INSTALLED_APPS = [
     'drf_yasg',
     'rest_framework',
     'rest_framework_simplejwt',
+<<<<<<< HEAD
     'django_twilio',
+=======
+>>>>>>> origin/master
 
     # local apps
     'users',
@@ -57,7 +63,11 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': [BASE_DIR / 'template'],
+=======
+        'DIRS': [],
+>>>>>>> origin/master
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -139,6 +149,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
+<<<<<<< HEAD
 
 # Email Settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -152,3 +163,5 @@ EMAIL_USE_SSL = False
 # SMS Setting
 TWILIO_ACCOUNT_SID = env.str('TWILIO_ACCOUNT_SID')
 TWILIO_AUTH_TOKEN = env.str('TWILIO_AUTH_TOKEN')
+=======
+>>>>>>> origin/master

@@ -1,7 +1,11 @@
 from rest_framework import serializers
 from rest_framework.validators import ValidationError
 
+<<<<<<< HEAD
 from shared.utility import check_email_or_phone, send_email, send_phone
+=======
+from shared.utility import check_email_or_phone
+>>>>>>> origin/master
 from users.models import User, VIA_EMAIL, VIA_PHONE
 
 
@@ -31,11 +35,18 @@ class SignUpSerializer(serializers.ModelSerializer):
         user = super(SignUpSerializer, self).create(validated_data)
         if user.auth_type == VIA_EMAIL:
             code = user.create_verify_code(VIA_EMAIL)
+<<<<<<< HEAD
             send_email(user.email, code)
         elif user.auth_type == VIA_PHONE:
             code = user.create_verify_code(VIA_PHONE)
             send_phone(user.phone_number, code)
         user.save()
+=======
+            # send_mail(user.email, code)
+        elif user.auth_type == VIA_PHONE:
+            code = user.create_verify_code(VIA_PHONE)
+            # send_phone(user.phone_number, code)
+>>>>>>> origin/master
         return user
 
     def validate(self, attrs):
