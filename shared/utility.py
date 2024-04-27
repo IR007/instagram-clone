@@ -1,5 +1,4 @@
 import re
-<<<<<<< HEAD
 import threading
 
 from django.conf import settings
@@ -7,10 +6,8 @@ from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from rest_framework.exceptions import ValidationError
 from twilio.rest import Client
-=======
 
 from rest_framework.exceptions import ValidationError
->>>>>>> origin/master
 
 from users.models import VIA_EMAIL, VIA_PHONE
 
@@ -29,7 +26,6 @@ def check_email_or_phone(email_or_phone):
             'message': "Telefon yoki email manzilingiz xato"
         }
         raise ValidationError(data)
-<<<<<<< HEAD
 
 
 class EmailThread(threading.Thread):
@@ -77,5 +73,3 @@ def send_phone(phone_number, code):
         from_="+13343730995",
         to=f"{phone_number}"
     )
-=======
->>>>>>> origin/master
